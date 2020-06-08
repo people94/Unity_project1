@@ -36,7 +36,7 @@ public class PlayerFire : MonoBehaviour
     void Update()
     {
         //Fire();
-        FireRay();
+        //FireRay();
         //레이저 보여주는 기능이 활성화 되어 있을때만
         //레이저를 보여준다
         //일정시간이 지나면 레이저 보여주는 기능 비활성화
@@ -135,4 +135,16 @@ public class PlayerFire : MonoBehaviour
             bullet.transform.position = firePoint.transform.position;
         }
     }   
+
+    //파이어버튼 클릭시
+    public void OnFireButtonClick()
+    {
+        //총알 게임오브젝트 생성
+        GameObject bullet = Instantiate(bulletFactory);
+
+        Bullet _bullet = bullet.GetComponent<Bullet>();
+        _bullet.isPlayer = true;
+        //총알 오브젝트의 위치 지정
+        bullet.transform.position = firePoint.transform.position;
+    }
 }
