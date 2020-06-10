@@ -57,26 +57,26 @@ public class Boss : MonoBehaviour
     //회전총알 발사
     private void AutoFire2()
     {
-        curTime1 += Time.deltaTime;
-        if (curTime1 > fireTime1)
+        if (target != null)
         {
-            for (int i = 0; i < bulletMax; i++)
+            curTime1 += Time.deltaTime;
+            if (curTime1 > fireTime1)
             {
-                //총알공장에서 총알생성
-                GameObject bullet = Instantiate(BulletFactory);
-                //총알생성 위치
-                bullet.transform.position = transform.position;
-                //플레이어의 방향 구하기(벡터의 뺄셈)
-                Vector3 dir = target.transform.position - transform.position;
-                dir.Normalize();
-                //360도 방향으로 총알발사
-                float angle = 360.0f / bulletMax;
-                //총구의 방향도 돌려준다
-                bullet.transform.eulerAngles = new Vector3(0, 0, i * angle);
-            }
+                for (int i = 0; i < bulletMax; i++)
+                {
+                    //총알공장에서 총알생성
+                    GameObject bullet = Instantiate(BulletFactory);
+                    //총알생성 위치
+                    bullet.transform.position = transform.position;                
+                    //360도 방향으로 총알발사
+                    float angle = 360.0f / bulletMax;
+                    //총구의 방향도 맞춰준다(이게 중요함)
+                    bullet.transform.eulerAngles = new Vector3(0, 0, i * angle);
+                }
 
-            //타이머 초기화
-            curTime1 = 0.0f;
+                //타이머 초기화
+                curTime1 = 0.0f;
+            }
         }
     }
 

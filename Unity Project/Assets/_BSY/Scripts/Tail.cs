@@ -8,13 +8,7 @@ public class Tail : MonoBehaviour
     //플레이어의 위치를 알아야 한다
     public GameObject target;   //따라다닐 오브젝트
     public float speed = 3.0f;  //따라다닐 속도
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
+    
     // Update is called once per frame
     void Update()
     {

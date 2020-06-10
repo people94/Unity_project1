@@ -60,6 +60,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+  fxFactory: {fileID: 100006, guid: ffb0e706d501b3c419271afe82349459, type: 3}
 --- !u!54 &6937213885733855491
 Rigidbody:
   m_ObjectHideFlags: 0

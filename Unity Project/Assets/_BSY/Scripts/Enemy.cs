@@ -9,15 +9,12 @@ public class Enemy : MonoBehaviour
 
     public float speed = 10.0f;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        Destroy(gameObject, 3.0f);
-    }
+    public GameObject fxFactory;
 
     // Update is called once per frame
     void Update()
     {
+        //아래로 이동해라
         transform.Translate(Vector3.down * speed * Time.deltaTime);
     }
 
@@ -29,7 +26,18 @@ public class Enemy : MonoBehaviour
         Destroy(gameObject);//소문자 gameObject는 자기자신
         Destroy(collision.gameObject);//collision은 충돌된 게임오브젝트
 
+        //이펙트보여주기
+        ShowEffect();
+
         //점수추가
         ScoreManager.instance.AddScore();
     }
+
+    void ShowEffect()
+    {
+        GameObject fx = Instantiate(fxFactory);
+        fx.transform.position = transform.position;
+    }
 }
+
+
