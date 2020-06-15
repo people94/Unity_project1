@@ -17,12 +17,12 @@ TagManager:
   - 
   - Player
   - Enemy
-  - Bullet
+  - P_Bullet
   - DestroyZone
   - Boss
-  - 
-  - 
-  - 
+  - Coin
+  - E_Bullet
+  - Flying
   - 
   - 
   - 

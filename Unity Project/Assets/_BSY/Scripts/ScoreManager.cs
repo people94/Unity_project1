@@ -46,12 +46,18 @@ public class ScoreManager : MonoBehaviour
     }
 
     //점수 추가 및 텍스트 업데이트
-    public void AddScore()
+    public void AddScore(int _score)
     {
-        score++;
+        score += _score;
         scorTxt.text = "Score : " + score;
 
         //텍스트메시 프로
         //textTxt.text = "test.....";
+    }
+
+    //점수 가져오기
+    public int GetScore()
+    {
+        return score;
     }
 }
